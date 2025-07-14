@@ -15,6 +15,7 @@ import Examdone from "./Pages/Examdone"
 import ExamRedirect from "./Pages/ExamRedirect";
 import Examcode from "./Pages/Examcode";
 import LiveMonitoring from "./Components/LiveMonitoring";
+import Homepage from "./Pages/homepage";
 
 function App() {
   console.log('App component rendering...');
@@ -103,45 +104,22 @@ function App() {
     );
   }
   
-  if (!user) {
-    console.log('No user, redirecting to login');
-    return <Login />;
-  }
-  
-  if (!role) {
-    console.log('No role available, showing role loading state');
-    return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        flexDirection: 'column'
-      }}>
-        <p>Loading your user role...</p>
-        <p>If this takes too long, please refresh the page.</p>
-      </div>
-    );
-  }
-
   return (
     <Routes>
-      {/* Common Exam Routes */}
-      <Route path="/exam/:id" element={<ExamStatusCheck />}>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/login" element={<Login />} />
+      {/* Protected Routes */}
+      <Route path="/exam/:id" element={user ? <ExamStatusCheck /> : <Navigate to="/login" replace />}>
         <Route index element={<ExamIntro />} />
         <Route path="attempt" element={<ExamAttempt />} />
         <Route path="blocked" element={<ExamBlocked />} />
       </Route>
-      <Route path="/exam/attempt/:id" element={<ExamAttempt />} />
-      {/* Exam Redirect Route */}
-      <Route path="/exam-redirect" element={<ExamRedirect />} />
-      {/* Exam Done Route */}
-      <Route path="/examdone" element={<Examdone />} />
-
+      <Route path="/exam/attempt/:id" element={user ? <ExamAttempt /> : <Navigate to="/login" replace />} />
+      <Route path="/exam-redirect" element={user ? <ExamRedirect /> : <Navigate to="/login" replace />} />
+      <Route path="/examdone" element={user ? <Examdone /> : <Navigate to="/login" replace />} />
       {/* Admin Routes */}
-      {role === "admin" && (
+      {user && role === "admin" && (
         <>
-          <Route path="/" element={<Navigate to="/admin" replace />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/monitor/:examId" element={<AdminDashboard />} />
           <Route path="/monitor/:examId" element={<LiveMonitoring />} />
@@ -149,13 +127,11 @@ function App() {
           <Route path="*" element={<Navigate to="/admin" replace />} />
         </>
       )}
-
       {/* Student Routes */}
-      {role === "student" && (
+      {user && role === "student" && (
         <>
           <Route path="/examcode" element={<Examcode />} />
           <Route path="/exam" element={<StudentExamPage />} />
-          <Route path="/" element={<Navigate to="/examcode" replace />} />
           <Route path="*" element={<Navigate to="/examcode" replace />} />
         </>
       )}

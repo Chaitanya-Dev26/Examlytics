@@ -1,3 +1,20 @@
+/* Add root color variables for homepage */
+:root {
+  --primary: #10b981; /* green (logo, accents) */
+  --secondary: #1f2937; /* dark text, buttons */
+  --accent: #3b82f6; /* blue (ratings, price) */
+  --background: #f8f9fa; /* page background */
+  --text-main: #1f2937; /* main heading text */
+  --text-muted: #6b7280; /* muted/secondary text */
+  --star: #fbbf24; /* star rating */
+  --button-bg: #064e3b; /* demo button */
+  --button-border: #d1d5db; /* border for secondary button */
+  --button-hover: #374151; /* hover for secondary button */
+  --white: #fff;
+  --gray-border: #e5e7eb;
+  --danger: #e53e3e;
+}
+
 .spinner {
   font-size: 1.2rem;
   padding: 2rem;
