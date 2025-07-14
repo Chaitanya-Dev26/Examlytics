@@ -129,7 +129,7 @@ src/
 
 ## 🧠 Built By
 
-- [Shlok Kadam](https://github.com/shlokkadam) – Full-stack Developer @ ITM Skills University  
+- [Shlok Kadam](https://github.com/Shlokmonster) – Full-stack Developer @ ITM Skills University  
 - [Chaitanya Shirsat](https://github.com/Chaitanya-Dev26) – Frontend Developer @ ITM Skills University  
 
 
