@@ -26,32 +26,32 @@ function HateTestimonials() {
   const testimonials = [
     {
       avatar: avatar1,
-      quote: "Whoever created AutoProctor, I hope you choke",
+      quote: "Whoever created Examlytic, I hope you choke",
       position: { top: '200px', left: '50px' }
     },
     {
       avatar: avatar2,
-      quote: "She might be AutoProctor, because she never trusted me enough",
+      quote: "She might be Examlytic, because she never trusted me enough",
       position: { top: '320px', left: '200px' }
     },
     {
       avatar: avatar3,
-      quote: "AutoProctor is the work of the devil",
+      quote: "Examlytic is the work of the devil",
       position: { top: '180px', left: '380px' }
     },
     {
       avatar: avatar4,
-      quote: "Did I just hear the mom's voice helping her child to cheat thru Autoproctor's noise detection..",
+      quote: "Did I just hear the mom's voice helping her child to cheat thru Examlytic's noise detection..",
       position: { top: '340px', left: '520px' }
     },
     {
       avatar: avatar5,
-      quote: "People who made AutoProctor are the living spawns of satan",
+      quote: "People who made Examlytic are the living spawns of satan",
       position: { top: '160px', left: '720px' }
     },
     {
       avatar: avatar6,
-      quote: "Who introduced AutoProctor to miss zahra I just wanna talk",
+      quote: "Who introduced Examlytic to miss zahra I just wanna talk",
       position: { top: '300px', left: '860px' }
     }
   ];
