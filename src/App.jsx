@@ -24,6 +24,7 @@ function App() {
   const [roleLoading, setRoleLoading] = useState(true)
 
   useEffect(() => {
+    setRoleLoading(true); // Ensure loading state is set immediately when user changes
     console.log('Auth state changed - user:', user ? 'Logged in' : 'Not logged in');
     
     const fetchRole = async () => {
@@ -73,7 +74,6 @@ function App() {
   console.log('App render state:', { loading, user, role, roleLoading });
 
   if (loading || roleLoading) {
-    console.log('Showing loading state...');
     return (
       <div style={{
         display: 'flex',
@@ -81,7 +81,8 @@ function App() {
         alignItems: 'center',
         height: '100vh',
         flexDirection: 'column',
-        gap: '20px'
+        gap: '20px',
+        background: '#f8f9fa',
       }}>
         <div style={{
           width: '50px',
@@ -103,10 +104,22 @@ function App() {
       </div>
     );
   }
-  
+
+  // Only render routes after loading is complete
   return (
     <Routes>
-      <Route path="/" element={<Homepage />} />
+      <Route
+        path="/"
+        element={
+          user
+            ? role === "student"
+              ? <Navigate to="/examcode" replace />
+              : role === "admin"
+                ? <Navigate to="/admin" replace />
+                : <Homepage />
+            : <Homepage />
+        }
+      />
       <Route path="/login" element={<Login />} />
       {/* Protected Routes */}
       <Route path="/exam/:id" element={user ? <ExamStatusCheck /> : <Navigate to="/login" replace />}>
