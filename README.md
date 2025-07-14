@@ -129,8 +129,8 @@ src/
 
 ## 🧠 Built By
 
-**Shlok Kadam**  
-B.Tech CSE @ ITM Skills University  
-Full-stack dev | AI explorer | SaaS builder
+- [Shlok Kadam](https://github.com/shlokkadam) – Full-stack Developer @ ITM Skills University  
+- [Chaitanya Shirsat](https://github.com/Chaitanya-Dev26) – Frontend Developer @ ITM Skills University  
+
 
 ---
