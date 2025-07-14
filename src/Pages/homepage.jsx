@@ -24,41 +24,34 @@ const TestimonialCard = ({ avatar, quote, position }) => (
 
 function HateTestimonials() {
   const testimonials = [
-    {
-      avatar: avatar1,
-      quote: "Whoever created Examlytic, I hope you choke",
-      position: { top: '200px', left: '50px' }
-    },
-    {
-      avatar: avatar2,
-      quote: "She might be Examlytic, because she never trusted me enough",
-      position: { top: '320px', left: '200px' }
-    },
-    {
-      avatar: avatar3,
-      quote: "Examlytic is the work of the devil",
-      position: { top: '180px', left: '380px' }
-    },
-    {
-      avatar: avatar4,
-      quote: "Did I just hear the mom's voice helping her child to cheat thru Examlytic's noise detection..",
-      position: { top: '340px', left: '520px' }
-    },
-    {
-      avatar: avatar5,
-      quote: "People who made Examlytic are the living spawns of satan",
-      position: { top: '160px', left: '720px' }
-    },
-    {
-      avatar: avatar6,
-      quote: "Who introduced Examlytic to miss zahra I just wanna talk",
-      position: { top: '300px', left: '860px' }
-    }
+    { avatar: avatar1, quote: "Whoever created Examlytic, I hope you choke", position: { top: '40px', left: '50px' } },
+    { avatar: avatar2, quote: "She might be Examlytic, because she never trusted me enough", position: { top: '220px', left: '170px' } },
+    { avatar: avatar3, quote: "Examlytic is the work of the devil", position: { top: '60px', left: '410px' } },
+    { avatar: avatar4, quote: "Did I just hear the mom's voice helping her child to cheat thru Examlytic's noise detection..", position: { top: '250px', left: '510px' } },
+    { avatar: avatar5, quote: "People who made Examlytic are the living spawns of satan", position: { top: '30px', left: '780px' } },
+    { avatar: avatar6, quote: "Who introduced Examlytic to miss zahra I just wanna talk", position: { top: '220px', left: '930px' } }
   ];
 
   return (
     <div className="container">
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+        .hate-above {
+          position: relative;
+          display: inline-block;
+        }
+        .hate-above .hate {
+          position: absolute;
+          left: 30px;
+          top: -28px;
+          font-family: 'Comic Relief', cursive;
+          font-size: 33px;
+          color: red;
+          font-weight: 700;
+          transform: rotate(-18deg);
+          pointer-events: none;
+          user-select: none;
+        }
         .container {
           width: 100%;
           min-height: 100vh;
@@ -79,8 +72,19 @@ function HateTestimonials() {
         }
         .title .love { text-decoration: line-through; text-decoration-color: #ff0000; text-decoration-thickness: 3px; }
         .subtitle { font-size: 18px; color: #666; margin-top: 10px; font-weight: 400; }
-        .testimonials-area { position: relative; height: 500px; max-width: 1200px; margin: 0 auto; }
-        .testimonial-card { display: flex; align-items: flex-start; gap: 15px; max-width: 280px; }
+        .testimonials-area {
+          position: relative;
+          max-width: 1200px;
+          margin: 0 auto;
+          height: 420px;
+        }
+        .testimonial-card {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+          max-width: 280px;
+          position: absolute;
+        }
         .quote-bubble { background: white; padding: 15px 18px; border-radius: 18px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); position: relative; flex: 1; }
         .quote-bubble::before { content: ''; position: absolute; left: -8px; top: 20px; width: 0; height: 0; border-right: 8px solid white; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
         .quote-bubble p { margin: 0; font-size: 14px; line-height: 1.4; color: #333; }
@@ -89,13 +93,22 @@ function HateTestimonials() {
           .testimonial-card { position: static !important; margin-bottom: 20px; max-width: 100%; }
         }
       `}</style>
-      <div className="header">
-        <h1 className="title">
-          <span className="hate">Hate</span>
-          <br />
-          Our Users <span className="love">Love</span> us!
+      <div className="header" style={{ marginBottom: '0px' }}>
+        <h1
+          style={{
+            fontSize: '48px',
+            fontWeight: '700',
+            color: '#1f2937',
+            lineHeight: '1.1',
+            margin: '60px auto 24px',
+            fontFamily: 'Georgia, serif',
+            textAlign: 'center',
+            maxWidth: '1200px',
+          }}
+        >
+          Our users <span className="hate-above"><span className="hate">hate</span><span style={{ textDecoration: 'line-through', textDecorationColor: 'red', textDecorationThickness: '5px', color: '#1f2937' }}>Love</span></span> us!
         </h1>
-        <p className="subtitle">Real tweets from really pissed off candidates</p>
+        <p className="subtitle" style={{ marginBottom: '0px' }}>Real tweets from really pissed off students</p>
       </div>
       <div className="testimonials-area">
         {testimonials.map((testimonial, index) => (
