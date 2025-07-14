@@ -10,7 +10,7 @@ import StudentExamPage from "./Pages/StudentExamPage"
 import ExamIntro from "./Pages/ExamIntro"
 import ExamAttempt from "./Pages/ExamAttempt"
 import ExamBlocked from "./Pages/ExamBlocked";
-import ExamStatusCheck from "./components/ExamStatusCheck";
+import ExamStatusCheck from "./Components/ExamStatusCheck";
 import Examdone from "./Pages/Examdone"
 import ExamRedirect from "./Pages/ExamRedirect";
 import Examcode from "./Pages/Examcode";
