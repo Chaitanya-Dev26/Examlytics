@@ -1,7 +1,7 @@
 
 # 🎓 Examlytics 
 
-> Real-time webcam & screen monitoring for secure, fair exams.  
+> Real-time webcam & screen monitoring for secure, fair exam.
 > Exams start → both webcam + screen recording begin automatically → uploaded to Supabase for admin review.
 
 ---
